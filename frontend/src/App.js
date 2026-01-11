@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import './App.css';
 import axios from 'axios';
+import { useForm } from 'react-hook-form'
 
 function App() {
   const [data, setData] = useState([])
+  const { register, handleSubmit } = useEffect()
 
   useEffect(() => {
     const result = axios.get('http://localhost:5000/')
@@ -12,8 +13,8 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <h1>
+    <div>
+      <h1 style={{ textAlign: 'center' }}>
         Hello
       </h1>
       {data && data.length > 0 && data.map(item => (

@@ -1,6 +1,7 @@
 const express = require('express')
 const core = require('cors')
 const sql = require('./db')
+const port = 5000;
 
 
 const app = express()
@@ -16,6 +17,6 @@ app.get('/', (req, res) => {
     })
 })
 
-app.listen(5000, () => {
-    console.log('app is listen')
+app.listen(port, () => {
+    console.log('app is listening on port', port)
 })
